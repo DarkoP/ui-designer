@@ -1,10 +1,19 @@
+<script>
+
+</script>
+
 <template>
   <nav>
     <ul>
-      <li>Link</li>
+      <font-awesome-icon icon="floppy-disk" size="2x"/>
     </ul>
     <ul>
-      <li>Link</li>
+      <li>
+        <font-awesome-icon icon="desktop" size="3x" />
+      </li>
+      <li>
+        <font-awesome-icon icon="mobile-screen-button" size="3x" />
+      </li>
     </ul>
     <ul>
       <li>Link</li>
@@ -13,13 +22,20 @@
 </template>
 
 <style scoped>
+@import '../../assets/styles/variables.css';
+
 nav {
-    color: #ececec;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 ul {
   list-style: none;
+}
+
+li {
+  display: inline-block;
+  margin: 0.25rem;
 }
 </style>

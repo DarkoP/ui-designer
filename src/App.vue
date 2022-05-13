@@ -1,8 +1,8 @@
 <script setup>
 import Header from "./components/Layout/Header.vue";
-import Main from './components/Layout/Main.vue'
-import Sidebar from './components/Layout/Sidebar.vue'
-import Footer from './components/Layout/Footer.vue'
+import Main from "./components/Layout/Main.vue";
+import Sidebar from "./components/Layout/Sidebar.vue";
+import Footer from "./components/Layout/Footer.vue";
 </script>
 
 <template>
@@ -14,29 +14,11 @@ import Footer from './components/Layout/Footer.vue'
 </template>
 
 <style>
-@import './assets/base.css';
+@import "./assets/styles/base.css";
+@import "./assets/styles/variables.css";
 
 body {
-  font-family: sans-serif;
-  background: #363636;
-  color: #ececec;
+  background: var(--color-bg-black);
+  color: var(--color-white);
 }
-
-#app {
-  color: #363636;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
 </style>

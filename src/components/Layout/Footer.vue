@@ -6,7 +6,6 @@
 
 <style scoped>
 footer {
-    color: #ececec;
     display: flex;
     justify-content: center;
     position: fixed;

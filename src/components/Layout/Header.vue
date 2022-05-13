@@ -2,7 +2,6 @@
 import Logo from './Logo.vue';
 import NavbarTop from './NavbarTop.vue';
 </script>
-import Logo from './components/Footer.vue';
 
 <template>
   <header>
@@ -12,7 +11,6 @@ import Logo from './components/Footer.vue';
 </template>
 
 <style scoped>
-header {
-    background: #363636;
-}
+@import '../../assets/styles/variables.css';
+
 </style>

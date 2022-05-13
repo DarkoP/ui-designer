@@ -1,12 +1,18 @@
 <template>
     <figure>
-        <img alt="Vue logo" class="logo" src="../../assets/logo.svg" width="25" height="25" />
+        <span class="logo">UI-Designer</span>
     </figure>
 </template>
 
 <style scoped>
+@import url();
+
 figure {
     display: flex;
     justify-content: center;
+}
+
+.logo {
+    font-family: logoFont;
 }
 </style>
