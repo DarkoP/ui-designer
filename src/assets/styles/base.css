@@ -9,7 +9,7 @@
 
 body {
   min-height: 100vh;
-  min-width: 970px;
+  /* min-width: 970px; */
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: sans-serif;

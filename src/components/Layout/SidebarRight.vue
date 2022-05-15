@@ -1,10 +1,10 @@
 <template>
   <section class="sidebar sidebar-right">
     <header>
-      <figure class="toggle-sidebar-right closed">
+      <figure class="toggle-sidebar-right closed" @click="toggleRight()">
         <font-awesome-icon icon="bars" size="2x" bordered />
       </figure>
-      <figure class="toggle-sidebar-right opened">
+      <figure class="toggle-sidebar-right opened" @click="toggleRight()">
         <font-awesome-icon icon="angles-right"/>
       </figure>
       <h3>Sidebar Right</h3>
@@ -19,6 +19,22 @@
     </section>
   </section>
 </template>
+
+<script>
+export default {
+  name: 'SidebarRight',
+
+  data() {
+    return {
+      clicked: true
+    }
+  },
+
+  props: {
+    toggleRight: Function
+  }
+}
+</script>
 
 <style scoped>
 @import '../../assets/styles/variables.css';

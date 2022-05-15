@@ -1,20 +1,67 @@
-<script setup>
-import Header from "./components/Layout/Header.vue";
-import Main from "./components/Layout/Main.vue";
-import SidebarLeft from "./components/Layout/SidebarLeft.vue";
-import SidebarRight from "./components/Layout/SidebarRight.vue";
-import Footer from "./components/Layout/Footer.vue";
-</script>
-
 <template>
+    <!-- <h1>User Name: {{clicked}}</h1> -->
   <Header />
-  <section class="content-wrapper show-sidebar-left show-sidebar-right">
-    <SidebarLeft />
+  <section class="content-wrapper" :class="{'show-sidebar-left': clickedLeft, 'show-sidebar-right': clickedRight}">
+    <SidebarLeft :toggleLeft="getToggleLeft" />
     <Main />
-    <SidebarRight />
+    <SidebarRight :toggleRight="getToggleRight"/>
   </section>
   <Footer />
 </template>
+
+<script>
+import Header from "./components/Layout/Header.vue"
+import Main from "./components/Layout/Main.vue"
+import SidebarLeft from "./components/Layout/SidebarLeft.vue"
+import SidebarRight from "./components/Layout/SidebarRight.vue"
+import Footer from "./components/Layout/Footer.vue"
+
+export default {
+  name: "App",
+
+  data() {
+    return {
+      clickedLeft: true,
+      clickedRight: true
+    }
+  },
+
+  created() {
+    window.addEventListener("resize", this.myEventHandler);
+    window.addEventListener("load", this.myEventHandler);
+  },
+
+  destroyed() {
+    window.removeEventListener("resize", this.myEventHandler);
+    window.removeEventListener("load", this.myEventHandler);
+  },
+
+  methods: {
+    getToggleLeft() {
+      this.clickedLeft = !this.clickedLeft 
+    },
+
+    getToggleRight() {
+      this.clickedRight = !this.clickedRight
+    },
+
+    myEventHandler(e) {
+      if (window.innerWidth < 970 ) {
+        this.clickedLeft = false
+        this.clickedRight = false
+      }
+    }
+  },
+
+  components: {
+    Header,
+    Main,
+    SidebarLeft,
+    SidebarRight,
+    Footer
+  }
+}
+</script>
 
 <style>
 @import "./assets/styles/base.css";
@@ -89,8 +136,8 @@ body {
 }
 
 .content-wrapper main {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
   transition: 0.5s;
 }
 
