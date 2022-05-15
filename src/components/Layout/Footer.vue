@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>&copy; 2022 <span class="copyright">UI-Designer</span></p>
+        <p>&copy; 2022 <span class="copyright">UI-Designer</span> by <span class="copyright yuda">YUDA</span></p>
     </footer>
 </template>
 
@@ -15,5 +15,9 @@ footer {
 
 .copyright {
     font-family: logoFont;
+}
+
+.yuda {
+    font-size: small;
 }
 </style>
