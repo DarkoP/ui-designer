@@ -13,16 +13,16 @@
       <p>lorem ipsum</p>
     </section>
     <section class="sidebar-body closed">
-      <figure class="nav-icon"><font-awesome-icon icon="screwdriver-wrench" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="eye" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="eye-slash" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="check" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="square-check" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="ellipsis" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="ellipsis-vertical" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="minus" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="plus" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="pen-to-square" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="screwdriver-wrench" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="eye" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="eye-slash" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="check" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="square-check" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="ellipsis" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="ellipsis-vertical" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="minus" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="plus" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="pen-to-square" size="2x"/></figure>
     </section>
   </section>
 </template>

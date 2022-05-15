@@ -24,6 +24,12 @@ a{
   transition: 0.4s;
 }
 
+.nav-icon,
+.toggle-sidebar-left,
+.toggle-sidebar-right {
+  cursor: pointer;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: var(--color-link-hover);
@@ -32,14 +38,18 @@ a{
     background-color: var(--bg-white);
     color: var(--color-link);
   }
+  .toggle-sidebar-left:hover svg,
+  .toggle-sidebar-right:hover svg{
+    color: var(--color-link);
+  }
 }
 
 .svg-inline--fa {
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 .fa-2x {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 .fa-3x {
   font-size: 2em;

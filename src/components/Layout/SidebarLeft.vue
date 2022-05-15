@@ -13,16 +13,16 @@
       <p>lorem ipsum</p>
     </section>
     <section class="sidebar-body closed">
-      <figure class="nav-icon"><font-awesome-icon icon="floppy-disk" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="folder" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="folder-open" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="file-zipper" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="download" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="upload" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="clone" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="pencil" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="sliders" /></figure>
-      <figure class="nav-icon"><font-awesome-icon icon="trash" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="floppy-disk" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="folder" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="folder-open" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="file-zipper" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="download" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="upload" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="clone" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="pencil" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="sliders" size="2x"/></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="trash" size="2x"/></figure>
     </section>
   </section>
 </template>
