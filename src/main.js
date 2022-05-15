@@ -10,8 +10,27 @@ import {
   faBars,
   faXmark,
   faDownload,
+  faUpload,
   faAnglesLeft,
-  faAnglesRight
+  faAnglesRight,
+  faEye,
+  faEyeSlash,
+  faScrewdriverWrench,
+  faPencil,
+  faClone,
+  faCheck,
+  faSquareCheck,
+  faEllipsis,
+  faEllipsisVertical,
+  faMinus,
+  faPlus,
+  faSliders,
+  faTrash,
+  faPenToSquare,
+  faFolder,
+  faFolderOpen,
+  faFileZipper
+
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -25,8 +44,26 @@ library.add(
   faBars,
   faXmark,
   faDownload,
+  faUpload,
   faAnglesLeft,
-  faAnglesRight
+  faAnglesRight,
+  faEye,
+  faEyeSlash,
+  faScrewdriverWrench,
+  faPencil,
+  faClone,
+  faCheck,
+  faSquareCheck,
+  faEllipsis,
+  faEllipsisVertical,
+  faMinus,
+  faPlus,
+  faSliders,
+  faTrash,
+  faPenToSquare,
+  faFolder,
+  faFolderOpen,
+  faFileZipper
 );
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");

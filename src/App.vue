@@ -75,7 +75,12 @@ body {
 .content-wrapper {
   height: 82vh;
 } 
-.content,
+
+.content {
+  overflow-y: auto;
+  max-height: 67vh;
+}
+
 .sidebar-body {
   overflow-y: auto;
   max-height: 70vh;
@@ -85,7 +90,11 @@ body {
   .content-wrapper {
     height: 84vh;
   }
-  .content,
+  .content{
+      overflow-y: auto;
+      max-height: 72vh;
+  }
+
   .sidebar-body {
       overflow-y: auto;
       max-height: 75vh;
@@ -97,7 +106,11 @@ body {
     height: 86vh;
   }
 
-  .content,
+  .content {
+    overflow-y: auto;
+    max-height: 75vh;
+  }
+
   .sidebar-body  {
     overflow-y: auto;
     max-height: 78vh;
@@ -108,7 +121,11 @@ body {
   .content-wrapper {
     height: 88vh;
   }
-  .content,
+  .content{
+    overflow-y: auto;
+    max-height: 77vh;
+  }
+
   .sidebar-body {
     overflow-y: auto;
     max-height: 80vh;
@@ -119,7 +136,11 @@ body {
   .content-wrapper {
     height: 90vh;
   }
-  .content,
+  .content{
+    overflow-y: auto;
+    max-height: 79vh;
+  }
+
   .sidebar-body {
     overflow-y: auto;
     max-height: 82vh;
@@ -131,13 +152,13 @@ body {
   width: var(--width-sidebar);
   position: absolute;
   top: 0;
-  width: 2.25rem;
+  width: 2.75rem;
   transition: 0.5s;
 }
 
 .content-wrapper main {
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
   transition: 0.5s;
 }
 
@@ -157,6 +178,10 @@ body {
 .show-sidebar-right .sidebar-right h3,
 .show-sidebar-right .sidebar-right .opened {
   display: block;
+}
+
+.sidebar-body.closed {
+  overflow: hidden;
 }
 
 /* Left */

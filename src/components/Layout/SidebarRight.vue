@@ -2,7 +2,7 @@
   <section class="sidebar sidebar-right">
     <header>
       <figure class="toggle-sidebar-right closed" @click="toggleRight()">
-        <font-awesome-icon icon="bars" size="2x" bordered />
+        <font-awesome-icon icon="bars" size="3x" bordered />
       </figure>
       <figure class="toggle-sidebar-right opened" @click="toggleRight()">
         <font-awesome-icon icon="angles-right"/>
@@ -13,9 +13,16 @@
       <p>lorem ipsum</p>
     </section>
     <section class="sidebar-body closed">
-      <figure><font-awesome-icon icon="download" /></figure>
-      <figure><font-awesome-icon icon="download" /></figure>
-      <figure><font-awesome-icon icon="download" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="screwdriver-wrench" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="eye" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="eye-slash" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="check" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="square-check" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="ellipsis" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="ellipsis-vertical" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="minus" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="plus" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="pen-to-square" /></figure>
     </section>
   </section>
 </template>
@@ -60,5 +67,9 @@ export default {
 
 .sidebar-body {
   padding:0.5rem;
+}
+
+.nav-icon {
+  padding: 0.5rem 0.25rem;
 }
 </style>

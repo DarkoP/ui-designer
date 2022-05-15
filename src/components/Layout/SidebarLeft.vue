@@ -6,22 +6,23 @@
         <font-awesome-icon icon="angles-left" />
       </figure>
       <figure class="toggle-sidebar-left closed" @click="toggleLeft()">
-        <font-awesome-icon icon="bars" size="2x" bordered />
+        <font-awesome-icon icon="bars" size="3x" bordered />
       </figure>
     </header>
     <section class="sidebar-body opened">
       <p>lorem ipsum</p>
     </section>
     <section class="sidebar-body closed">
-      <figure>
-        <font-awesome-icon icon="download" />
-      </figure>
-      <figure>
-        <font-awesome-icon icon="download" />
-      </figure>
-      <figure>
-        <font-awesome-icon icon="download" />
-      </figure>
+      <figure class="nav-icon"><font-awesome-icon icon="floppy-disk" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="folder" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="folder-open" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="file-zipper" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="download" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="upload" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="clone" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="pencil" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="sliders" /></figure>
+      <figure class="nav-icon"><font-awesome-icon icon="trash" /></figure>
     </section>
   </section>
 </template>
@@ -63,5 +64,9 @@ export default {
 
 .sidebar-body {
   padding: 0.5rem;
+}
+
+.nav-icon {
+  padding: 0.5rem 0.25rem;
 }
 </style>
