@@ -1,81 +1,208 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <!-- <h1>User Name: {{clicked}}</h1> -->
+  <Header />
+  <section class="content-wrapper" :class="{'show-sidebar-left': clickedLeft, 'show-sidebar-right': clickedRight}">
+    <SidebarLeft :toggleLeft="getToggleLeft" />
+    <Main />
+    <SidebarRight :toggleRight="getToggleRight"/>
+  </section>
+  <Footer />
 </template>
 
+<script>
+import Header from "./components/Layout/Header.vue"
+import Main from "./components/Layout/Main.vue"
+import SidebarLeft from "./components/Layout/SidebarLeft.vue"
+import SidebarRight from "./components/Layout/SidebarRight.vue"
+import Footer from "./components/Layout/Footer.vue"
+
+export default {
+  name: "App",
+
+  data() {
+    return {
+      clickedLeft: true,
+      clickedRight: true
+    }
+  },
+
+  created() {
+    window.addEventListener("resize", this.myEventHandler);
+    window.addEventListener("load", this.myEventHandler);
+  },
+
+  destroyed() {
+    window.removeEventListener("resize", this.myEventHandler);
+    window.removeEventListener("load", this.myEventHandler);
+  },
+
+  methods: {
+    getToggleLeft() {
+      this.clickedLeft = !this.clickedLeft 
+    },
+
+    getToggleRight() {
+      this.clickedRight = !this.clickedRight
+    },
+
+    myEventHandler(e) {
+      if (window.innerWidth < 970 ) {
+        this.clickedLeft = false
+        this.clickedRight = false
+      }
+    }
+  },
+
+  components: {
+    Header,
+    Main,
+    SidebarLeft,
+    SidebarRight,
+    Footer
+  }
+}
+</script>
+
 <style>
-@import './assets/base.css';
+@import "./assets/styles/base.css";
+@import "./assets/styles/variables.css";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+body {
+  background: var(--color-bg-black);
+  color: var(--color-white);
 }
 
-header {
-  line-height: 1.5;
+.content-wrapper {
+  height: 82vh;
+} 
+
+.content {
+  overflow-y: auto;
+  max-height: 67vh;
 }
 
-.logo {
+.sidebar-body {
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+@media (min-height: 44rem) {
+  .content-wrapper {
+    height: 84vh;
+  }
+  .content{
+      overflow-y: auto;
+      max-height: 72vh;
+  }
+
+  .sidebar-body {
+      overflow-y: auto;
+      max-height: 75vh;
+  }
+}
+
+@media (min-height: 50rem) {
+  .content-wrapper {
+    height: 86vh;
+  }
+
+  .content {
+    overflow-y: auto;
+    max-height: 75vh;
+  }
+
+  .sidebar-body  {
+    overflow-y: auto;
+    max-height: 78vh;
+  }
+}
+
+@media (min-height: 60rem) {
+  .content-wrapper {
+    height: 88vh;
+  }
+  .content{
+    overflow-y: auto;
+    max-height: 77vh;
+  }
+
+  .sidebar-body {
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+}
+
+@media (min-height: 70rem) {
+  .content-wrapper {
+    height: 90vh;
+  }
+  .content{
+    overflow-y: auto;
+    max-height: 79vh;
+  }
+
+  .sidebar-body {
+    overflow-y: auto;
+    max-height: 82vh;
+  }
+}
+
+.sidebar {
+  height: 100%;
+  width: var(--width-sidebar);
+  position: absolute;
+  top: 0;
+  width: 2.75rem;
+  transition: 0.5s;
+}
+
+.content-wrapper main {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  transition: 0.5s;
+}
+
+/* Closed */
+.sidebar h3,
+.sidebar-body.opened,
+.sidebar-left .opened,
+.sidebar-right .opened,
+.show-sidebar-left .sidebar-left .closed,
+.show-sidebar-right .sidebar-right .closed {
+  display: none;
+}
+
+/* Opend */
+.show-sidebar-left .sidebar-left h3,
+.show-sidebar-left .sidebar-left .opened,
+.show-sidebar-right .sidebar-right h3,
+.show-sidebar-right .sidebar-right .opened {
   display: block;
-  margin: 0 auto 2rem;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.sidebar-body.closed {
+  overflow: hidden;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+/* Left */
+.show-sidebar-left .sidebar-left {
+  width: var(--width-sidebar);
+  background: var(--yuda-white);
+  transition: 0.5s;
+}
+.show-sidebar-left main {
+  margin-left: calc(var(--width-sidebar) + 3rem);
+  transition: 0.5s;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+/* Right */
+.show-sidebar-right .sidebar-right {
+  width: var(--width-sidebar);
+  background: var(--yuda-white);
+  transition: 0.5s;
+}
+.show-sidebar-right main {
+  margin-right: calc(var(--width-sidebar) + 3rem);
+  transition: 0.5s;
 }
 </style>

@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  /* min-width: 970px; */
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-link);
+  transition: 0.4s;
+}
+
+.nav-icon,
+.toggle-sidebar-left,
+.toggle-sidebar-right {
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: var(--color-link-hover);
+  }
+  .nav-icon:hover {
+    background-color: var(--bg-white);
+    color: var(--color-link);
+  }
+  .toggle-sidebar-left:hover svg,
+  .toggle-sidebar-right:hover svg{
+    color: var(--color-link);
+  }
+}
+
+.svg-inline--fa {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 1.25em;
+}
+.fa-3x {
+  font-size: 2em;
+}
+.fa-4x {
+  font-size: 3em;
+}
+
+@font-face {
+  font-family: logoFont;
+  src: url(../fonts/Knewave-Regular.ttf);
+}
+
+
+html {
+  scrollbar-color: var(--color-bg-black-thin);
+  scrollbar-width: thin;
+}
+
+/* WebKit and Chromiums */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  /* background-color: var(--color-link-hover); */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-black-thin);
+  border-radius: 5px;
+}
