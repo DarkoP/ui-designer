@@ -14,5 +14,6 @@ figure {
 
 .logo {
     font-family: logoFont;
+    font-size: 1.5rem;
 }
 </style>

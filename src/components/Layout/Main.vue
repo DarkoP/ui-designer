@@ -1,10 +1,15 @@
 <template>
-    <main>
-        <p>Main Content</p>
-        <a href="#">limk das ist ein link</a>
-        <font-awesome-icon icon="bars" size="2x" bordered />
-        <span>Menu</span>
-    </main>
+  <main>
+    <header>
+      <h2>
+        Main Header
+      </h2>
+    </header>
+    <section class="content">
+      <p>Main Content</p>
+      <a href="#">limk das ist ein link</a>
+    </section>
+  </main>
 </template>
 
 <style scoped>
@@ -13,5 +18,20 @@
 main {
   background: var(--color-bg-white);
   color: var(--color-black);
+  margin-left: 3rem;
+  margin-right: 3rem;
+  height: 100%;
+  border-radius: 0.25rem;
+  min-width: 22.5rem;
+}
+
+header {
+  background: var(--color-heading);
+  padding:0.5rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.content {
+  padding: 0.5rem;
 }
 </style>

@@ -13,4 +13,8 @@ import NavbarTop from './NavbarTop.vue';
 <style scoped>
 @import '../../assets/styles/variables.css';
 
+header {
+  margin: 0 1rem;
+}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>Footer</p>
+        <p>&copy; 2022 <span class="copyright">UI-Designer</span></p>
     </footer>
 </template>
 
@@ -11,5 +11,9 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.copyright {
+    font-family: logoFont;
 }
 </style>

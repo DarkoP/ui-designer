@@ -8,11 +8,25 @@ import {
   faMobileScreenButton,
   faFloppyDisk,
   faBars,
-  faXmark
+  faXmark,
+  faDownload,
+  faAnglesLeft,
+  faAnglesRight
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* add icons to the library */
-library.add(faPhone, faBarcode, faDesktop, faMobileScreenButton, faFloppyDisk, faBars, faXmark);
+library.add(
+  faPhone,
+  faBarcode,
+  faDesktop,
+  faMobileScreenButton,
+  faFloppyDisk,
+  faBars,
+  faXmark,
+  faDownload,
+  faAnglesLeft,
+  faAnglesRight
+);
 
 createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
