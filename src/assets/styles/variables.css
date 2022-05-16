@@ -1,12 +1,17 @@
 /* colors */
 :root {
   --yuda-black: rgb(54, 54, 54);
-  --yuda-white: rgb(236, 236, 236);
+  --yuda-white: rgb(243, 243, 243);
   --yuda-white-trans: rgb(236, 236, 236, 0.4);
   --yuda-gray: rgb(196, 196, 196);
   --bg-white: hsla(0, 0%, 93%, 0.62);
   --yoda-bg-2: rgb(255, 63, 56);
   --yoda-bg-2-thin: rgb(250, 124, 119);
+
+
+  --color-button-bg: rgba(255, 255, 255, 0.25);
+  --color-button-bg-hover: rgba(255, 255, 255, 0.5);
+  --color-button-bg-active: rgba(255, 255, 255, 0.75);
 }
   
 /* semantic color variables for this project */

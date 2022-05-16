@@ -5,6 +5,9 @@
 </template>
 
 <style scoped>
+@import "../../assets/styles/base.css";
+@import '../../assets/styles/variables.css';
+
 figure {
     display: flex;
     justify-content: center;

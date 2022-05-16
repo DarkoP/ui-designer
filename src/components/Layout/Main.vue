@@ -4,43 +4,96 @@
       <h2>
         Main Header
       </h2>
-      <nav class="header-nav">
+      <nav class="main-header__nav--top">
         <ul class="left">
-          <li class="nav-icon"><figure><font-awesome-icon icon="floppy-disk" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="folder" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="folder-open" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="file-zipper" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="download" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="upload" /></figure></li>
+          <li><button class="nav-button active"><figure class="nav-icon"><font-awesome-icon icon="floppy-disk" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="folder" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="folder-open" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="file-zipper" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="download" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="upload" /></figure></button></li>
         </ul>
         <ul class="center">
-          <li class="nav-icon"><figure><font-awesome-icon icon="clone" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="pencil" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="sliders" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="trash" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="screwdriver-wrench" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="eye" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="eye-slash" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="check" /></figure></li>
+          <li><button class="nav-button active"><figure class="nav-icon"><font-awesome-icon icon="clone" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="pencil" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="sliders" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="trash" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="screwdriver-wrench" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="eye" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="eye-slash" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="check" /></figure></button></li>
         </ul>
         <ul class="right">
-          <li class="nav-icon"><figure><font-awesome-icon icon="square-check" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="ellipsis" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="ellipsis-vertical" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="minus" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="plus" /></figure></li>
-          <li class="nav-icon"><figure><font-awesome-icon icon="pen-to-square" /></figure></li>
+          <li><button class="nav-button active"><figure class="nav-icon"><font-awesome-icon icon="square-check" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="ellipsis" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="ellipsis-vertical" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="minus" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="plus" /></figure></button></li>
+          <li><button class="nav-button"><figure class="nav-icon"><font-awesome-icon icon="pen-to-square" /></figure></button></li>
         </ul>
       </nav>
     </header>
     <section class="content">
-      <p>Main Content</p>
-      <a href="#">limk das ist ein link</a>
+
+      <h1>Page 1</h1>
+      <draggable
+        class="dragArea list-group"
+        :list="debuglist"
+        group="people"
+        @change="log"
+        item-key="id"
+      >
+        <template #item="{ element }">
+          <div class="list-group-item">
+            {{ element.name }}
+          </div>
+        </template>
+      </draggable>
+
+      <div class="debug-list">
+        <RawDisplayer class="col-3" :value="debuglist" title="Page 1" />
+      </div>
+
     </section>
   </main>
 </template>
 
+<script>
+import draggable from 'vuedraggable'
+import RawDisplayer from '../RawDisplayer.vue'
+
+// let idGlobal = 8;
+
+export default {
+  name: "App",
+  order: 3,
+  components: {
+    draggable,
+    RawDisplayer
+},
+  data() {
+    return {
+      debuglist: [
+      ]
+    };
+  },
+  methods: {
+    log: function(evt) {
+      window.console.log(evt);
+    },
+    cloneDog({ id, name }) {
+      return {
+        // id: idGlobal++,
+        id: `${id}`,
+        name: `cat ${id}`
+      };
+    }
+  }
+};
+</script>
+
 <style scoped>
+@import "../../assets/styles/base.css";
 @import '../../assets/styles/variables.css';
 
 main {
@@ -59,13 +112,17 @@ header {
   padding: 0.5rem;
   border-radius: 0.25rem 0.25rem 0 0;
 }
-.header-nav {
+.main-header__nav--top{
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: var(--yoda-bg-2-thin);
   margin: 0.5rem -0.5rem -0.5rem -0.5rem;
   padding: 0.25rem 0.5rem;
+}
+
+.content {
+  position: relative;
 }
 
 ul {
@@ -83,12 +140,27 @@ ul.center {
   text-align:center;
 }
 
-li {
-  display: inline-block;
-  padding: 0.25rem;
-}
-
 .content {
   padding: 0.5rem;
+  height: inherit;
 }
+
+.dragArea {
+  min-height: 2rem;
+  outline: 1px dashed;
+}
+
+.list-group-item {
+  cursor: move;
+}
+
+.debug-list {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: x-small;
+}
+
+
 </style>
