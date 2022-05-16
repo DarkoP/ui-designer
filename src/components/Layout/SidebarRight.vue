@@ -1,12 +1,16 @@
 <template>
   <section class="sidebar sidebar-right">
     <header>
-      <figure class="toggle-sidebar-right closed" @click="toggleRight()">
-        <font-awesome-icon icon="bars" size="3x" bordered />
-      </figure>
-      <figure class="toggle-sidebar-right opened" @click="toggleRight()">
-        <font-awesome-icon icon="angles-right"/>
-      </figure>
+      <button class="nav-button toggle-sidebar-right closed">
+        <figure class="nav-icon" @click="toggleRight()">
+          <font-awesome-icon icon="bars" size="3x" bordered />
+        </figure>
+      </button>
+      <button class="nav-button toggle-sidebar-right opened">
+        <figure class="nav-icon" @click="toggleRight()">
+          <font-awesome-icon icon="angles-right"/>
+        </figure>
+      </button>
       <h3>Sidebar Right</h3>
     </header>
     <section class="sidebar-body opened">
