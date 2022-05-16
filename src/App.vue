@@ -184,6 +184,7 @@ body {
 
 .sidebar-body.closed {
   overflow: hidden;
+  text-align: center;
 }
 
 /* Left */
@@ -206,5 +207,15 @@ body {
 .show-sidebar-right main {
   margin-right: calc(var(--width-sidebar) + 3rem);
   transition: 0.5s;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0.125rem;
 }
 </style>

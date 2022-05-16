@@ -25,6 +25,8 @@ export default {
 };
 </script>
 <style scoped>
+@import "../assets/styles/base.css";
+@import "../assets/styles/variables.css";
 pre {
   text-align: start;
 }

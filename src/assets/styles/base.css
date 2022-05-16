@@ -24,6 +24,7 @@ a{
   transition: 0.4s;
 }
 
+.nav-button,
 .nav-icon,
 .toggle-sidebar-left,
 .toggle-sidebar-right {
@@ -34,12 +35,8 @@ a{
   a:hover {
     background-color: var(--color-link-hover);
   }
-  .nav-icon:hover {
-    background-color: var(--bg-white);
-    color: var(--color-link);
-  }
-  .toggle-sidebar-left:hover svg,
-  .toggle-sidebar-right:hover svg{
+
+  .nav-button:hover {
     color: var(--color-link);
   }
 }
@@ -79,4 +76,21 @@ html {
 ::-webkit-scrollbar-thumb {
   background: var(--color-bg-black-thin);
   border-radius: 5px;
+}
+
+.nav-button {
+  padding: 0.25rem;
+  /* background: var(--color-button-bg); */
+  background: transparent;
+  border: 1px solod var(--color-button-bg);
+}
+
+.nav-button:hover {
+  background: var(--color-button-bg-hover);
+}
+
+.nav-button:active,
+.nav-button.active {
+  background: var(--color-button-bg-active);
+  color: var(--color-link);
 }

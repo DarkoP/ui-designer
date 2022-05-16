@@ -11,6 +11,7 @@ import NavbarTop from './NavbarTop.vue';
 </template>
 
 <style scoped>
+@import "../../assets/styles/base.css";
 @import '../../assets/styles/variables.css';
 
 header {
