@@ -5,8 +5,6 @@
 </template>
 
 <style scoped>
-@import url();
-
 figure {
     display: flex;
     justify-content: center;
