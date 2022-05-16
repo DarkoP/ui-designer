@@ -34,11 +34,84 @@
       </nav>
     </header>
     <section class="content">
-      <p>Main Content</p>
-      <a href="#">limk das ist ein link</a>
+
+
+      <div class="row">
+        <!-- <div class="col-3">
+          <h3>Draggable 1</h3>
+          <draggable
+            class="dragArea list-group"
+            :list="list1"
+            :group="{ name: 'people', pull: 'clone', put: false }"
+            :clone="cloneDog"
+            @change="log"
+            item-key="id"
+          >
+            <template #item="{ element }">
+              <div class="list-group-item">
+                {{ element.name }}
+              </div>
+            </template>
+          </draggable>
+        </div> -->
+
+        <div class="col-3">
+          <h3>Draggable 2</h3>
+          <draggable
+            class="dragArea list-group"
+            :list="list2"
+            group="people"
+            @change="log"
+            item-key="id"
+          >
+            <template #item="{ element }">
+              <div class="list-group-item">
+                {{ element.name }}
+              </div>
+            </template>
+          </draggable>
+        </div>
+
+        <RawDisplayer class="col-3" :value="list2" title="List 2" />
+      </div>
+
+
     </section>
   </main>
 </template>
+
+<script>
+import draggable from 'vuedraggable'
+import RawDisplayer from '../RawDisplayer.vue'
+
+let idGlobal = 8;
+
+export default {
+  name: "App",
+  order: 3,
+  components: {
+    draggable,
+    RawDisplayer
+},
+  data() {
+    return {
+      list2: [
+      ]
+    };
+  },
+  methods: {
+    log: function(evt) {
+      window.console.log(evt);
+    },
+    cloneDog({ id }) {
+      return {
+        id: idGlobal++,
+        name: `cat ${id}`
+      };
+    }
+  }
+};
+</script>
 
 <style scoped>
 @import '../../assets/styles/variables.css';
@@ -90,5 +163,9 @@ li {
 
 .content {
   padding: 0.5rem;
+}
+
+.list-group-item {
+  cursor: move;
 }
 </style>

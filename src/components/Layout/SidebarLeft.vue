@@ -10,7 +10,9 @@
       </figure>
     </header>
     <section class="sidebar-body opened">
-      <p>lorem ipsum</p>
+      
+      Sites Tree
+
     </section>
     <section class="sidebar-body closed">
       <figure class="nav-icon"><font-awesome-icon icon="floppy-disk" size="2x"/></figure>
@@ -28,6 +30,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'SidebarLeft',
 

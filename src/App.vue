@@ -15,6 +15,7 @@ import Main from "./components/Layout/Main.vue"
 import SidebarLeft from "./components/Layout/SidebarLeft.vue"
 import SidebarRight from "./components/Layout/SidebarRight.vue"
 import Footer from "./components/Layout/Footer.vue"
+import draggable from 'vuedraggable'
 
 export default {
   name: "App",
@@ -58,7 +59,8 @@ export default {
     Main,
     SidebarLeft,
     SidebarRight,
-    Footer
+    Footer,
+    draggable
   }
 }
 </script>

@@ -10,7 +10,25 @@
       <h3>Sidebar Right</h3>
     </header>
     <section class="sidebar-body opened">
-      <p>lorem ipsum</p>
+
+      <h3>Draggable 1</h3>
+      <draggable
+        class="dragArea list-group"
+        :list="list1"
+        :group="{ name: 'people', pull: 'clone', put: false }"
+        :clone="cloneDog"
+        @change="log"
+        item-key="id"
+      >
+        <template #item="{ element }">
+          <div class="list-group-item">
+            {{ element.name }}
+          </div>
+        </template>
+      </draggable>
+
+      <RawDisplayer class="col-3" :value="list1" title="List 1" />
+      
     </section>
     <section class="sidebar-body closed">
       <figure class="nav-icon"><font-awesome-icon icon="screwdriver-wrench" size="2x"/></figure>
@@ -28,17 +46,45 @@
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+import RawDisplayer from '../RawDisplayer.vue'
+
+let idGlobal = 8;
+
 export default {
   name: 'SidebarRight',
 
   data() {
     return {
-      clicked: true
+      clicked: true,
+      list1: [
+        { name: "dog 1", id: 1 },
+        { name: "dog 2", id: 2 },
+        { name: "dog 3", id: 3 },
+        { name: "dog 4", id: 4 }
+      ],
     }
   },
 
   props: {
     toggleRight: Function
+  },
+  
+  methods: {
+    log: function(evt) {
+      window.console.log(evt);
+    },
+    cloneDog({ id }) {
+      return {
+        id: idGlobal++,
+        name: `cat ${id}`
+      };
+    }
+  },
+
+  components: {
+    draggable,
+    RawDisplayer
   }
 }
 </script>
@@ -72,4 +118,9 @@ export default {
 .nav-icon {
   padding: 0.5rem 0.25rem;
 }
+
+.list-group-item {
+  cursor: move;
+}
+
 </style>
