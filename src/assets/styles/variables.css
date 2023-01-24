@@ -1,0 +1,28 @@
+/* colors */
+:root {
+  --yuda-black: rgb(54, 54, 54);
+  --yuda-white: rgb(243, 243, 243);
+  --yuda-white-trans: rgb(236, 236, 236, 0.4);
+  --yuda-gray: rgb(196, 196, 196);
+  --bg-white: hsla(0, 0%, 93%, 0.62);
+  --yoda-bg-2: rgb(255, 63, 56);
+  --yoda-bg-2-thin: rgb(250, 124, 119);
+
+
+  --color-button-bg: rgba(255, 255, 255, 0.25);
+  --color-button-bg-hover: rgba(255, 255, 255, 0.5);
+  --color-button-bg-active: rgba(255, 255, 255, 0.75);
+}
+  
+/* semantic color variables for this project */
+:root {
+  --color-bg-black: var(--yuda-black);
+  --color-bg-black-thin: hsla(0, 0%, 21%, 0.70);
+  --color-bg-white: var(--yuda-white);
+  --color-black: var(--yuda-black);
+  --color-white: var(--yuda-white);
+  --color-heading: var(--yuda-gray);
+  --color-link: hsl(14, 100%, 37%);
+  --color-link-hover: hsla(14, 100%, 37%, 0.2);
+  --width-sidebar: 16rem;
+}
